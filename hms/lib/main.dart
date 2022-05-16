@@ -2,14 +2,18 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hms/screens/gaz_pullution_screen.dart';
+import 'package:hms/screens/air_condition_screen.dart';
+import 'package:hms/screens/gate_sys_screen.dart';
+import 'package:hms/screens/fire_system_screen.dart';
 import 'package:hms/screens/home_screen.dart';
 import 'package:hms/screens/auth/login.dart';
+import 'package:hms/screens/inddor_light_screen.dart';
 import 'package:hms/screens/outdoor_light_screen.dart';
 import 'package:hms/screens/soil_pump_screem.dart';
 import 'package:hms/theme/theme_constants.dart';
 import 'package:hms/theme/theme_manager.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'screens/camera_screen.dart';
 import 'screens/pump_screen.dart';
 
 void main() async {
@@ -67,8 +71,12 @@ class _MyAppState extends State<MyApp> {
         LoginScreen.routeName: (ctx) => const LoginScreen(),
         PumpScreen.routeName: (ctx) => const PumpScreen(),
         OutdoorScreen.routeName: (ctx) => const OutdoorScreen(),
-        SoilPumpScreen.routeName: (ctx) => const SoilPumpScreen(),
-        GasPolutionSystem.routeName: (ctx) => const GasPolutionSystem(),
+        IrrigationPumpScreen.routeName: (ctx) => const IrrigationPumpScreen(),
+        FireSystem.routeName: (ctx) => const FireSystem(),
+        GateSystemIcon.routeName: (ctx) => const GateSystemIcon(),
+        AirConditionScreen.routeName: (ctx) => const AirConditionScreen(),
+        SecurtyCamera.routeName: (ctx) => const SecurtyCamera(),
+        InddorLightScreen.routeName: (ctx) => const InddorLightScreen(),
         // ProductsOverviewScreen.routeName: (ctx) => ProductsOverviewScreen(),
       },
     );

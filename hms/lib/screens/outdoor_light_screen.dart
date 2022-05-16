@@ -36,8 +36,9 @@ class _OutdoorScreenState extends State<OutdoorScreen> {
     lambDbRef.onValue.listen((event) async {
       final data = event.snapshot.children;
       setState(() {
-        lampFlag = data.elementAt(0).value as bool;
-        lampOnPeriod = data.elementAt(1).value as int;
+        custom = data.elementAt(0).value as bool;
+        lampFlag = data.elementAt(1).value as bool;
+        lampOnPeriod = data.elementAt(2).value as int;
         init = false;
       });
     });
@@ -71,6 +72,7 @@ class _OutdoorScreenState extends State<OutdoorScreen> {
                         TextButton(
                           onPressed: () {
                             custom = false;
+                            lambDbRef.child('custom').set(custom);
                             setState(() {});
                           },
                           child: const Text('A'),
@@ -91,6 +93,7 @@ class _OutdoorScreenState extends State<OutdoorScreen> {
                         TextButton(
                           onPressed: () {
                             custom = true;
+                            lambDbRef.child('custom').set(custom);
                             setState(() {});
                           },
                           child: const Text('C'),

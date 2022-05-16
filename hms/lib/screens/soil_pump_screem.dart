@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 import '../model/pump.dart';
 
-class SoilPumpScreen extends StatefulWidget {
+class IrrigationPumpScreen extends StatefulWidget {
   static const routeName = '/soil-pump';
 
-  const SoilPumpScreen({Key? key}) : super(key: key);
+  const IrrigationPumpScreen({Key? key}) : super(key: key);
 
   @override
-  State<SoilPumpScreen> createState() => _SoilPumpScreenState();
+  State<IrrigationPumpScreen> createState() => _IrrigationPumpScreenState();
 }
 
-class _SoilPumpScreenState extends State<SoilPumpScreen> {
+class _IrrigationPumpScreenState extends State<IrrigationPumpScreen> {
   var dbRef = FirebaseDatabase.instance.ref().child('soild');
   late Pump pump;
   bool init = true;
@@ -30,7 +30,7 @@ class _SoilPumpScreenState extends State<SoilPumpScreen> {
                 data.elementAt(2).value.toString() == 'true' ? true : false,
             pumpError:
                 data.elementAt(1).value.toString() == 'true' ? true : false,
-            waterLevl: (data.elementAt(0).value as int) * 1.0);
+            waterLevl: 100.0 - (data.elementAt(0).value as int) * 1.0);
         // custom = data.elementAt(0).value.toString() == 'true' ? true : false;
       });
       pumpOn = pump.pumpFlag;
@@ -50,7 +50,7 @@ class _SoilPumpScreenState extends State<SoilPumpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Soil Pump Options'),
+        title: const Text('Irrigation System Options'),
       ),
       body: Center(
         child: init

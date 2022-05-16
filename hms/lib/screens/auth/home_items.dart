@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hms/screens/gaz_pullution_screen.dart';
+import 'package:hms/screens/camera_screen.dart';
+import 'package:hms/screens/gate_sys_screen.dart';
+import 'package:hms/screens/fire_system_screen.dart';
 import 'package:hms/screens/outdoor_light_screen.dart';
 import 'package:hms/screens/pump_screen.dart';
 import 'package:hms/screens/soil_pump_screem.dart';
 import 'package:hms/widgets/water_level.dart';
+
+import '../air_condition_screen.dart';
+import '../inddor_light_screen.dart';
 
 class HomeItemsScreen extends StatefulWidget {
   const HomeItemsScreen({Key? key}) : super(key: key);
@@ -99,6 +104,7 @@ class _HomeItemsScreenState extends State<HomeItemsScreen> {
           onTap: sensoreGrid[i]['function'],
           child: Container(
             decoration: BoxDecoration(
+              color: i == 2 ? Colors.white : Colors.transparent,
               image: DecorationImage(
                 image: AssetImage(sensoreGrid[i]['image']),
                 fit: BoxFit.cover,
@@ -164,31 +170,45 @@ class _HomeItemsScreenState extends State<HomeItemsScreen> {
         },
       },
       {
-        'image': 'assets/images/soil-system.jpg',
-        'title': 'Soil System',
+        'image': 'assets/images/indor-light.png',
+        'title': 'Indoor Light Sys.',
         'function': () {
-          Navigator.of(context).pushNamed(SoilPumpScreen.routeName);
+          Navigator.of(context).pushNamed(InddorLightScreen.routeName);
         },
       },
       {
-        'image': 'assets/images/outdoor-light-icon.jpg',
+        'image': 'assets/images/soil-system.jpg',
+        'title': 'Irrigation System',
+        'function': () {
+          Navigator.of(context).pushNamed(IrrigationPumpScreen.routeName);
+        },
+      },
+      {
+        'image': 'assets/images/gate-icon.jpg',
         'title': 'Gate System',
         'function': () {
-          Navigator.of(context).pushNamed(PumpScreen.routeName);
+          Navigator.of(context).pushNamed(GateSystemIcon.routeName);
         },
       },
       {
-        'image': 'assets/images/gas-polution.png',
-        'title': 'Gaz Pollution System',
+        'image': 'assets/images/fire-system.png',
+        'title': 'Fire System',
         'function': () {
-          Navigator.of(context).pushNamed(GasPolutionSystem.routeName);
+          Navigator.of(context).pushNamed(FireSystem.routeName);
         },
       },
       {
-        'image': 'assets/images/outdoor-light-icon.jpg',
+        'image': 'assets/images/air-condition-icon.png',
         'title': 'Air Condition Sys.',
         'function': () {
-          Navigator.of(context).pushNamed(PumpScreen.routeName);
+          Navigator.of(context).pushNamed(AirConditionScreen.routeName);
+        },
+      },
+      {
+        'image': 'assets/images/security-camera.jpg',
+        'title': 'Security Camera',
+        'function': () {
+          Navigator.of(context).pushNamed(SecurtyCamera.routeName);
         },
       },
     ];

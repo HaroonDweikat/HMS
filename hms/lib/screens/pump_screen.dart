@@ -140,7 +140,7 @@ class _PumpScreenState extends State<PumpScreen>
                           height: 30,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            color: pump.pumpFlag ? Colors.green : Colors.red,
+                            color: Colors.teal,
                           ),
                           child: Center(
                             child: Text(
